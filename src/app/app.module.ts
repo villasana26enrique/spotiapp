@@ -7,8 +7,13 @@ import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
+// Para poder Hacer llamados a API's se debe importar:
+import { HttpClientModule } from '@angular/common/http';
+
+
 // Rutas
 import { AppRoutingModule } from './app.routes';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +25,7 @@ import { AppRoutingModule } from './app.routes';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
