@@ -15,15 +15,17 @@ export class SpotifyService {
 
   getNewReleases() {
     const headers = this.getHeaders();
-    this.http.get('https://api.spotify.com/v1/browse/new-releases', { headers })
-              .subscribe((data: any) => {
-                console.log(data);
-              });
+    return this.http.get('https://api.spotify.com/v1/browse/new-releases', { headers });
+  }
+
+  getArtists(busqueda: string, type: string = 'artist') {
+    const headers = this.getHeaders();
+    return this.http.get(`https://api.spotify.com/v1/search?q=${ busqueda }&type=${ type }&limit=20`, { headers });
   }
 
   getHeaders() {
     return new HttpHeaders({
-      Authorization: 'Bearer BQDQl8r6qw-uLxyZyazkLlwKrr4OZP1sPQ7R9GTps9Z0Z8CyUORmRhEWv7y9-e12jospbPBs3R7QQB_o2kE'
+      Authorization: 'Bearer BQDt2AwzALJo_zTIqh4kdtnGbX9Dc2I6kkRz-KPJ9h6GRo8YVPAGAW-p7N8oUWimU6AWtyyQxwifQk_FAhc'
     });
   }
 }
