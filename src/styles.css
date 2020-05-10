@@ -5,6 +5,13 @@ body {
     color: white !important;
 }
 
+footer {
+    color: white;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
 hr {
     border-color: white;
 }

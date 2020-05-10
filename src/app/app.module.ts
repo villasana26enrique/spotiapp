@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app.routes';
 // Pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
     NavbarComponent,
     NoimagePipe,
     CardInfoComponent,
-    LoadingComponent
+    LoadingComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
