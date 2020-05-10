@@ -18,6 +18,7 @@ export class HomeComponent {
     this.loading = true;
     this.spotify.getNewReleases()
         .subscribe((data: any) => {
+          console.log(data);
           this.nuevosLanzamientos = data;
           this.loading = false;
     });
