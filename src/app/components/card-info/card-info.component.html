@@ -1,0 +1,16 @@
+<div class="card-columns">
+    <div *ngFor="let item of items" class="card">
+        <img [src]="item.images | noimage" class="card-img-top" alt="...">
+        <div *ngIf="searchView" class="card-body">
+            <h5 class="card-title text-center">{{ item.name }}</h5>
+        </div>
+        <div *ngIf="homeView" class="card-body">
+            <h5 class="card-title text-center">{{ item.name }}</h5>
+            <p class="card-textx">
+                <button *ngFor="let artista of item.artists" type="button" class="btn btn-outline-primary m-1">
+                    {{ artista.name }}
+                </button>
+            </p>
+        </div>
+    </div>
+</div>

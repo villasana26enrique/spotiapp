@@ -4,16 +4,4 @@
     </div>
 </div>
 <hr>
-<div class="card-columns">
-    <div *ngFor="let lanzamiento of nuevosLanzamientos" class="card">
-        <img [src]="lanzamiento.images | noimage" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title text-center">{{ lanzamiento.name }}</h5>
-            <p class="card-textx">
-                <button *ngFor="let artista of lanzamiento.artists" type="button" class="btn btn-outline-primary m-1">
-                    {{ artista.name }}
-                </button>
-            </p>
-        </div>
-    </div>
-</div>
+<app-card-info [items]="nuevosLanzamientos" [homeView]="true"></app-card-info>

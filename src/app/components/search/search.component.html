@@ -3,11 +3,4 @@
         <input #busqueda type="text" (keyup)="buscar(busqueda.value)" class="form-control" placeholder="Buscar Artista...">
     </div>
 </div>
-<div class="card-columns m-5">
-    <div *ngFor="let artista of resultado" class="card">
-        <img [src]="artista.images | noimage" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title text-center">{{ artista.name }}</h5>
-        </div>
-    </div>
-</div>
+<app-card-info [items]="resultado" [searchView]="true"></app-card-info>

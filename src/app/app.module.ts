@@ -6,6 +6,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { CardInfoComponent } from './components/card-info/card-info.component';
 
 // Para poder Hacer llamados a API's se debe importar:
 import { HttpClientModule } from '@angular/common/http';
@@ -13,8 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Rutas
 import { AppRoutingModule } from './app.routes';
-import { NoimagePipe } from './pipes/noimage.pipe';
 
+// Pipes
+import { NoimagePipe } from './pipes/noimage.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { NoimagePipe } from './pipes/noimage.pipe';
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
-    NoimagePipe
+    NoimagePipe,
+    CardInfoComponent
   ],
   imports: [
     BrowserModule,

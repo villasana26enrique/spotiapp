@@ -35,7 +35,7 @@ export class SpotifyService {
 
   getHeaders() {
     return new HttpHeaders({
-      Authorization: 'Bearer BQB8FzDaJDxBMFnCGo3m96zIk987Fh9vePVibexOkSoYkX_Tn8xum9p5JhH2Gahun7i26poRMigQt6RsDdQ'
+      Authorization: 'Bearer BQC17cPvDC2_i_CM8CadvzcujVQwXAVYRjBZkloRedwYoNA6ox4tqMZ7UTxU0LWyVrlgN5fvkommaPVA230'
     });
   }
 
