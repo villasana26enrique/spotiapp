@@ -3,4 +3,5 @@
         <input #busqueda type="text" (keyup)="buscar(busqueda.value)" class="form-control" placeholder="Buscar Artista...">
     </div>
 </div>
-<app-card-info [items]="resultado" [searchView]="true"></app-card-info>
+<app-loading *ngIf="loading"></app-loading>
+<app-card-info *ngIf="!loading" class="m-5" [items]="resultado" [searchView]="true"></app-card-info>
