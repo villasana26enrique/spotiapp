@@ -20,6 +20,12 @@ export class SpotifyService {
     return this.http.get( url, { headers } );
   }
 
+  getHeaders() {
+    return new HttpHeaders({
+      Authorization: 'Bearer BQBALfCFVTXCOHeHKjUXubkgUHNCgrlBm_nPpc4QU_d-0itMdEePBH7uJDURmFzoi0C_-6QAqnR7S34Ni2U'
+    });
+  }
+
   getNewReleases() {
     return this.getQuery('browse/new-releases')
               .pipe( map( (data: any) => {
@@ -33,10 +39,8 @@ export class SpotifyService {
               .pipe( map( (data: any) => data.artists.items ));
   }
 
-  getHeaders() {
-    return new HttpHeaders({
-      Authorization: 'Bearer BQCxo5s5Y81nHkDmbRdy6Z9NESdvQjF7J1_-sEzjLiT7qvMYPcYrEfrjnHXAzPYtIP61BLOAli9WK3OStv8'
-    });
+  getArtist(id: string) {
+    return this.getQuery(`artists/${ id }`);
   }
 
 }
