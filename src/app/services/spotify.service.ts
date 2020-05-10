@@ -14,24 +14,29 @@ export class SpotifyService {
     this.http = _http;
   }
 
-  getNewReleases() {
+  getQuery(query: string) {
+    const url = `https://api.spotify.com/v1/${ query }`;
     const headers = this.getHeaders();
-    return this.http.get('https://api.spotify.com/v1/browse/new-releases', { headers })
-                    .pipe( map( (data: any) => {
-                      return data.albums.items;
-                    }));
+    return this.http.get( url, { headers } );
+  }
+
+  getNewReleases() {
+    return this.getQuery('browse/new-releases')
+              .pipe( map( (data: any) => {
+                return data.albums.items;
+              }));
   }
 
   getArtists(busqueda: string, type: string = 'artist') {
-    const headers = this.getHeaders();
     /* La función de Flecha del Map está abreviada, solo para demostrar otra manera de hacerlo */
-    return this.http.get(`https://api.spotify.com/v1/search?q=${ busqueda }&type=${ type }&limit=20`, { headers })
-                    .pipe( map( (data: any) => data.artists.items ));
+    return this.getQuery(`search?q=${ busqueda }&type=${ type }&limit=20`)
+              .pipe( map( (data: any) => data.artists.items ));
   }
 
   getHeaders() {
     return new HttpHeaders({
-      Authorization: 'Bearer BQDt2AwzALJo_zTIqh4kdtnGbX9Dc2I6kkRz-KPJ9h6GRo8YVPAGAW-p7N8oUWimU6AWtyyQxwifQk_FAhc'
+      Authorization: 'Bearer BQB8FzDaJDxBMFnCGo3m96zIk987Fh9vePVibexOkSoYkX_Tn8xum9p5JhH2Gahun7i26poRMigQt6RsDdQ'
     });
   }
+
 }

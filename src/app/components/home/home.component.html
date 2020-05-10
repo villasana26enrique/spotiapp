@@ -6,7 +6,7 @@
 <hr>
 <div class="card-columns">
     <div *ngFor="let lanzamiento of nuevosLanzamientos" class="card">
-        <img [src]="lanzamiento.images[0].url" class="card-img-top" alt="...">
+        <img [src]="lanzamiento.images | noimage" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title text-center">{{ lanzamiento.name }}</h5>
             <p class="card-textx">
