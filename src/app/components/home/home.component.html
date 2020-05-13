@@ -4,6 +4,9 @@
     </div>
 </div>
 <hr>
+
 <app-loading *ngIf="loading"></app-loading>
+
+<app-show-errors *ngIf="error" [mensaje]="mensajeError"></app-show-errors>
 
 <app-card-info [items]="nuevosLanzamientos" [homeView]="true"></app-card-info>

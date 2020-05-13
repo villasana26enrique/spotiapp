@@ -10,7 +10,10 @@ export class HomeComponent {
 
   private spotify: any;
   loading: boolean;
-  public nuevosLanzamientos: any[] = [];
+  error: boolean;
+  mensajeError: string;
+  nuevosLanzamientos: any[] = [];
+
 
   constructor(_spotify: SpotifyService) {
 
@@ -20,8 +23,12 @@ export class HomeComponent {
         .subscribe((data: any) => {
           this.nuevosLanzamientos = data;
           this.loading = false;
+    }, ( reject ) => {
+      this.loading = false;
+      this.mensajeError = reject.error.error.message;
+      this.error = true;
     });
-
+    this.error = false;
   }
 
 }

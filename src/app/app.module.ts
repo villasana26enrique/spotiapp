@@ -20,6 +20,7 @@ import { NoimagePipe } from './pipes/noimage.pipe';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
+import { ShowErrorsComponent } from './components/shared/show-errors/show-errors.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { DomseguroPipe } from './pipes/domseguro.pipe';
     CardInfoComponent,
     LoadingComponent,
     FooterComponent,
-    DomseguroPipe
+    DomseguroPipe,
+    ShowErrorsComponent
   ],
   imports: [
     BrowserModule,

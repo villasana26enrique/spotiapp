@@ -13,11 +13,14 @@ export class ArtistComponent {
   public artista: any = {};
   public loading: boolean;
   public topTracks: any[] = [];
+  public  error: boolean;
+  public mensajeError: string;
   constructor(_activatedRoute: ActivatedRoute,
               _spotify: SpotifyService) {
     this.loading = true;
     this.spotify = _spotify;
     this.activatedRoute = _activatedRoute;
+    this.error = false;
     this.activatedRoute.params.subscribe( (params: any) => {
       this.getArtist( params.id );
       this.getTopTracks( params.id );
@@ -30,6 +33,10 @@ export class ArtistComponent {
         .subscribe( (data: any) => {
           this.artista = data;
           this.loading = false;
+        }, ( reject ) => {
+          this.loading = false;
+          this.mensajeError = reject.error.error.message;
+          this.error = true;
         });
   }
 
@@ -38,6 +45,10 @@ export class ArtistComponent {
       (data: any) => {
         console.log(data);
         this.topTracks = data;
+      }, ( reject: any ) => {
+          this.loading = false;
+          this.mensajeError = reject.error.error.message;
+          this.error = true;
       }
     );
   }
